@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "content": {
+      "CONTENT00": {
+        "data": {},
+        "metadata": {},
+        "id": "CONTENT00"
+      },
+      "CONTENT01": {
+        "data": {},
+        "metadata": {},
+        "id": "CONTENT01"
+      },
+      "CONTENT02": {
+        "data": {},
+        "metadata": {},
+        "id": "CONTENT02"
+      }
+    }
+  },
+  "new": {
+    "content": {
+      "content_ref01": {
+        "data": {},
+        "metadata": {}
+      }
+    }
+  }
+}

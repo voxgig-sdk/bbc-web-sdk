@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// BbcWeb SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+BbcWebUtility::setRegistrar(function (BbcWebUtility $u): void {
+    $u->clean = [BbcWebClean::class, 'call'];
+    $u->done = [BbcWebDone::class, 'call'];
+    $u->make_error = [BbcWebMakeError::class, 'call'];
+    $u->feature_add = [BbcWebFeatureAdd::class, 'call'];
+    $u->feature_hook = [BbcWebFeatureHook::class, 'call'];
+    $u->feature_init = [BbcWebFeatureInit::class, 'call'];
+    $u->fetcher = [BbcWebFetcher::class, 'call'];
+    $u->make_fetch_def = [BbcWebMakeFetchDef::class, 'call'];
+    $u->make_context = [BbcWebMakeContext::class, 'call'];
+    $u->make_options = [BbcWebMakeOptions::class, 'call'];
+    $u->make_request = [BbcWebMakeRequest::class, 'call'];
+    $u->make_response = [BbcWebMakeResponse::class, 'call'];
+    $u->make_result = [BbcWebMakeResult::class, 'call'];
+    $u->make_point = [BbcWebMakePoint::class, 'call'];
+    $u->make_spec = [BbcWebMakeSpec::class, 'call'];
+    $u->make_url = [BbcWebMakeUrl::class, 'call'];
+    $u->param = [BbcWebParam::class, 'call'];
+    $u->prepare_auth = [BbcWebPrepareAuth::class, 'call'];
+    $u->prepare_body = [BbcWebPrepareBody::class, 'call'];
+    $u->prepare_headers = [BbcWebPrepareHeaders::class, 'call'];
+    $u->prepare_method = [BbcWebPrepareMethod::class, 'call'];
+    $u->prepare_params = [BbcWebPrepareParams::class, 'call'];
+    $u->prepare_path = [BbcWebPreparePath::class, 'call'];
+    $u->prepare_query = [BbcWebPrepareQuery::class, 'call'];
+    $u->result_basic = [BbcWebResultBasic::class, 'call'];
+    $u->result_body = [BbcWebResultBody::class, 'call'];
+    $u->result_headers = [BbcWebResultHeaders::class, 'call'];
+    $u->transform_request = [BbcWebTransformRequest::class, 'call'];
+    $u->transform_response = [BbcWebTransformResponse::class, 'call'];
+});

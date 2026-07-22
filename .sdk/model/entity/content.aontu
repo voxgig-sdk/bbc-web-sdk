@@ -1,0 +1,61 @@
+# Entity: content
+
+main: kit: entity: content: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "data"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "metadata"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "content"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "/news/videos/ckgerdnvm2xo"
+                kind: "query"
+                name: "path"
+                orig: "path"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/xd/page/content"
+          parts: [
+            "xd"
+            "page"
+            "content"
+          ]
+          select: {
+            exist: [
+              "path"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

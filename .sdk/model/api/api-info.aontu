@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/bbc"
+      }
+      description: "This API provides access to the latest news and updates from BBC.com, allowing developers to integrate trusted reporting on world and US news, sports, business, climate, innovation, culture, and more into their applications. It offers various endpoints for fetching content programmatically, making it easy to utilize BBC's extensive news database."
+      servers: [
+        {
+          description: "BBC API Production Server"
+          url: "https://web-cdn.api.bbci.co.uk"
+        }
+      ]
+      summary: "This API provides access to the latest news and updates from BBC.com, allowing developers to integrate trusted reporting on world and US news, sports, business, climate, innovation, culture, and more into their applications."
+      title: "BBC Web API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/bbc"
+    }
+  }
+}
+

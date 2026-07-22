@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "BBC Web API",
+    "description": "This API provides access to the latest news and updates from BBC.com, allowing developers to integrate trusted reporting on world and US news, sports, business, climate, innovation, culture, and more into their applications. It offers various endpoints for fetching content programmatically, making it easy to utilize BBC's extensive news database.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/bbc"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://web-cdn.api.bbci.co.uk",
+      "description": "BBC API Production Server"
+    }
+  ],
+  "paths": {
+    "/xd/page/content": {
+      "get": {
+        "summary": "Get BBC content by path",
+        "description": "Fetches BBC news content for a specified path. This endpoint retrieves detailed content including news articles, videos, and other media from BBC.com.",
+        "operationId": "getContent",
+        "tags": [
+          "Content"
+        ],
+        "parameters": [
+          {
+            "name": "path",
+            "in": "query",
+            "description": "The path to the BBC content resource (e.g., /news/videos/ckgerdnvm2xo)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/news/videos/ckgerdnvm2xo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved BBC content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "description": "The content data object containing news articles, videos, or other BBC content"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "description": "Metadata about the content"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid path parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid path parameter"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Content not found for the specified path",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Content not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Content",
+      "description": "Endpoints for retrieving BBC news and media content"
+    }
+  ],
+  "externalDocs": {
+    "description": "BBC Web API Documentation",
+    "url": "https://github.com/l0v3m0n3y/bbc"
+  }
+}

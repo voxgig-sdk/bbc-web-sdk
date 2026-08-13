@@ -66,11 +66,11 @@ function content_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BBCWEB_TEST_CONTENT_ENTID"] = {},
-    ["BBCWEB_TEST_LIVE"] = "FALSE",
+    ["BBC_WEB_TEST_CONTENT_ENTID"] = {},
+    ["BBC_WEB_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["BBCWEB_TEST_LIVE"] == "TRUE"
+  local live = env["BBC_WEB_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

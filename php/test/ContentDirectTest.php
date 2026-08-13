@@ -71,11 +71,11 @@ function content_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BBCWEB_TEST_CONTENT_ENTID" => [],
-        "BBCWEB_TEST_LIVE" => "FALSE",
+        "BBC_WEB_TEST_CONTENT_ENTID" => [],
+        "BBC_WEB_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["BBCWEB_TEST_LIVE"] === "TRUE";
+    $live = $env["BBC_WEB_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

@@ -23,8 +23,8 @@ module BbcWebTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("BBCWEB_TEST_LIVE")
-    override = getenv("BBCWEB_TEST_OVERRIDE")
+    live = getenv("BBC_WEB_TEST_LIVE")
+    override = getenv("BBC_WEB_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module BbcWebTestRunner
       end
     end
 
-    explain = getenv("BBCWEB_TEST_EXPLAIN")
-    m["BBCWEB_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("BBC_WEB_TEST_EXPLAIN")
+    m["BBC_WEB_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

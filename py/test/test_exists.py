@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BbcWeb SDK exists test
 
 import pytest
 from bbcweb_sdk import BbcWebSDK

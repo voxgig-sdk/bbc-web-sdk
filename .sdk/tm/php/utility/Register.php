@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ BbcWebUtility::setRegistrar(function (BbcWebUtility $u): void {
     $u->prepare_params = [BbcWebPrepareParams::class, 'call'];
     $u->prepare_path = [BbcWebPreparePath::class, 'call'];
     $u->prepare_query = [BbcWebPrepareQuery::class, 'call'];
+    $u->graphql_body = [BbcWebGraphql::class, 'body'];
+    $u->graphql_errors = [BbcWebGraphql::class, 'errors'];
     $u->result_basic = [BbcWebResultBasic::class, 'call'];
     $u->result_body = [BbcWebResultBody::class, 'call'];
     $u->result_headers = [BbcWebResultHeaders::class, 'call'];

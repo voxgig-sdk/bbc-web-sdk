@@ -34,7 +34,7 @@ client = BbcWebSDK.new
 
 ```ruby
 begin
-  # load returns the bare Content record (raises on error).
+  # load returns the ENTITY — call data_get for the Content record (raises on error).
   content = client.Content.load()
   puts content
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = BbcWebSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 content = client.Content.load()
 puts content
 ```
@@ -266,7 +267,7 @@ Create an instance: `content = client.Content`
 #### Example: Load
 
 ```ruby
-# load returns the bare Content record (raises on error).
+# load returns the ENTITY — call data_get for the Content record (raises on error).
 content = client.Content.load()
 ```
 

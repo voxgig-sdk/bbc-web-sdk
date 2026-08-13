@@ -43,8 +43,8 @@ class BbcWebTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('BBCWEB_TEST_LIVE');
-        $override = self::getenv('BBCWEB_TEST_OVERRIDE');
+        $live = self::getenv('BBC_WEB_TEST_LIVE');
+        $override = self::getenv('BBC_WEB_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class BbcWebTestRunner
             }
         }
 
-        $explain = self::getenv('BBCWEB_TEST_EXPLAIN');
+        $explain = self::getenv('BBC_WEB_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['BBCWEB_TEST_EXPLAIN'] = $explain;
+            $m['BBC_WEB_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

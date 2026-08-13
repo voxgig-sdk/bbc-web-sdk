@@ -61,6 +61,7 @@ module BbcWebConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/xd/page/content",
                   "parts" => [

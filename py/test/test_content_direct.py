@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from bbcweb_sdk.utility.voxgig_struct import voxgig_struct as vs
 from bbcweb_sdk import BbcWebSDK
-from core import helpers
+from bbcweb_sdk.core import helpers
 from test import runner
 
 
@@ -61,11 +61,11 @@ def _content_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BBCWEB_TEST_CONTENT_ENTID": {},
-        "BBCWEB_TEST_LIVE": "FALSE",
+        "BBC_WEB_TEST_CONTENT_ENTID": {},
+        "BBC_WEB_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("BBCWEB_TEST_LIVE") == "TRUE"
+    live = env.get("BBC_WEB_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

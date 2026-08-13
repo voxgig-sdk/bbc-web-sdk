@@ -26,8 +26,8 @@ import {
 describe('ContentEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BBCWEB_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BBCWEB_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BBC_WEB_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BBC_WEB_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BbcWebSDK.test()
@@ -62,7 +62,7 @@ describe('ContentEntity', async () => {
     // LOAD
     const content_ref01_ent = client.Content()
     const content_ref01_match_dt0: any = {}
-    const content_ref01_data_dt0 = await content_ref01_ent.load(content_ref01_match_dt0)
+    const content_ref01_data_dt0 = (await content_ref01_ent.load(content_ref01_match_dt0)).data()
     assert(null != content_ref01_data_dt0)
 
 

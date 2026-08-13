@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = BbcWebSDK.test()
 
 const content = await client.Content().load()
-// content is a bare entity populated with mock response data
+// content is the entity, populated with mock response data
+// — call content.data() for the record itself
 console.log(content)
 ```
 

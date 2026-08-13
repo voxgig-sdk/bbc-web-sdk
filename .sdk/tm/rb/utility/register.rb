@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BbcWebUtility.registrar = ->(u) {
   u.prepare_params = BbcWebUtilities::PrepareParams
   u.prepare_path = BbcWebUtilities::PreparePath
   u.prepare_query = BbcWebUtilities::PrepareQuery
+  u.graphql_body = BbcWebUtilities::GraphqlBody
+  u.graphql_errors = BbcWebUtilities::GraphqlErrors
   u.result_basic = BbcWebUtilities::ResultBasic
   u.result_body = BbcWebUtilities::ResultBody
   u.result_headers = BbcWebUtilities::ResultHeaders

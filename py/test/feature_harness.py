@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BbcWebControl
-from core.error import BbcWebError
-from core.result import BbcWebResult
-from core.spec import BbcWebSpec
+from bbcweb_sdk.config import make_config
+from bbcweb_sdk.features import _make_feature
+from bbcweb_sdk.core.control import BbcWebControl
+from bbcweb_sdk.core.error import BbcWebError
+from bbcweb_sdk.core.result import BbcWebResult
+from bbcweb_sdk.core.spec import BbcWebSpec
 
 
 # True when this SDK was generated with the named feature.

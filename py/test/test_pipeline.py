@@ -16,11 +16,11 @@
 import pytest
 
 from bbcweb_sdk import BbcWebSDK
-from core.error import BbcWebError
-from core.result import BbcWebResult
-from core.response import BbcWebResponse
-from core.spec import BbcWebSpec
-from feature.base_feature import BbcWebBaseFeature
+from bbcweb_sdk.core.error import BbcWebError
+from bbcweb_sdk.core.result import BbcWebResult
+from bbcweb_sdk.core.response import BbcWebResponse
+from bbcweb_sdk.core.spec import BbcWebSpec
+from bbcweb_sdk.feature.base_feature import BbcWebBaseFeature
 
 
 def _client():

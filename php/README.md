@@ -35,7 +35,7 @@ $client = new BbcWebSDK();
 
 ```php
 try {
-    // load() returns the bare Content record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Content record (throws on error).
     $content = $client->Content()->load();
     print_r($content);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = BbcWebSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $content = $client->Content()->load();
 print_r($content);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -276,7 +277,7 @@ Create an instance: `$content = $client->Content();`
 #### Example: Load
 
 ```php
-// load() returns the bare Content record (throws on error).
+// load() returns the ENTITY — call data_get() for the Content record (throws on error).
 $content = $client->Content()->load();
 ```
 

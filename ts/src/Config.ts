@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://web-cdn.api.bbci.co.uk',
+    base: "https://web-cdn.api.bbci.co.uk",
 
     headers: {
       "content-type": "application/json"
@@ -55,18 +55,12 @@ class Config {
     "content": {
       "fields": [
         {
-          "active": true,
           "name": "data",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "metadata",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 1
+          "type": "`$OBJECT`"
         }
       ],
       "name": "content",
@@ -76,11 +70,9 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "/news/videos/ckgerdnvm2xo",
                     "kind": "query",
                     "name": "path",
@@ -106,11 +98,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

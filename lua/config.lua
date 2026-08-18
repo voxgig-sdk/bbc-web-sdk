@@ -1,5 +1,8 @@
 -- BbcWeb SDK configuration
 
+-- Build a fresh, fully materialised config table. Every call rebuilds the
+-- whole structure, so prefer require("config_shared") unless you need a
+-- private copy you intend to mutate.
 local function make_config()
   return {
     main = {
@@ -25,18 +28,12 @@ local function make_config()
       ["content"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "data",
-            ["req"] = false,
             ["type"] = "`$OBJECT`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "metadata",
-            ["req"] = false,
             ["type"] = "`$OBJECT`",
-            ["index$"] = 1,
           },
         },
         ["name"] = "content",
@@ -46,11 +43,9 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
-                      ["active"] = true,
                       ["example"] = "/news/videos/ckgerdnvm2xo",
                       ["kind"] = "query",
                       ["name"] = "path",
@@ -77,10 +72,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "load",
           },
         },
         ["relations"] = {

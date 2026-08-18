@@ -40,7 +40,7 @@ class BbcWebSDK
         $utility = new BbcWebUtility();
         $this->_utility = $utility;
 
-        $config = BbcWebConfig::make_config();
+        $config = BbcWebConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

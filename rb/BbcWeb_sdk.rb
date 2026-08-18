@@ -28,7 +28,7 @@ class BbcWebSDK
     utility = BbcWebUtility.new
     @_utility = utility
 
-    config = BbcWebConfig.make_config
+    config = BbcWebConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

@@ -116,8 +116,8 @@ const content = client.Content()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
-| `metadata` | `Record<string, any>` | No |  |
+| `data` | `Record<string, any>` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `Record<string, any>` | No | Metadata about the content |
 
 ### Operations
 

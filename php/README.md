@@ -245,8 +245,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `metadata` |  |
+| `data` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | Metadata about the content |
 
 Operations: Load.
 
@@ -271,8 +271,8 @@ Create an instance: `$content = $client->Content();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `array` |  |
-| `metadata` | `array` |  |
+| `data` | `array` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `array` | Metadata about the content |
 
 #### Example: Load
 

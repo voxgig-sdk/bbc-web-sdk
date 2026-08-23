@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -285,8 +285,8 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `metadata` |  |
+| `data` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | Metadata about the content |
 
 Operations: load.
 
@@ -311,8 +311,8 @@ Create an instance: `const content = client.Content()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
-| `metadata` | `Record<string, any>` |  |
+| `data` | `Record<string, any>` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `Record<string, any>` | Metadata about the content |
 
 #### Example: Load
 

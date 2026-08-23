@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'BbcWeb',
+        slug: "bbc-web",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,10 +67,12 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "The content data object containing news articles, videos, or other BBC content",
           "type": "`$OBJECT`"
         },
         {
           "name": "metadata",
+          "short": "Metadata about the content",
           "type": "`$OBJECT`"
         }
       ],

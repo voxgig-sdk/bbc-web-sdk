@@ -93,8 +93,8 @@ content = client.Content
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
-| `metadata` | `Hash` | No |  |
+| `data` | `Hash` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `Hash` | No | Metadata about the content |
 
 ### Operations
 

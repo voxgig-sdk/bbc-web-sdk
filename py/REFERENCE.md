@@ -87,8 +87,8 @@ content = client.Content()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
-| `metadata` | `dict` | No |  |
+| `data` | `dict` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `dict` | No | Metadata about the content |
 
 ### Operations
 

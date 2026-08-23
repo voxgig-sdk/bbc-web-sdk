@@ -98,8 +98,8 @@ fmt.Println(content.GetName()) // "content"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
-| `metadata` | `map[string]any` | No |  |
+| `data` | `map[string]any` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `map[string]any` | No | Metadata about the content |
 
 ### Operations
 

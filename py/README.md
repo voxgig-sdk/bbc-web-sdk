@@ -241,8 +241,8 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `metadata` |  |
+| `data` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | Metadata about the content |
 
 Operations: Load.
 
@@ -267,8 +267,8 @@ Create an instance: `content = client.Content()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `dict` |  |
-| `metadata` | `dict` |  |
+| `data` | `dict` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `dict` | Metadata about the content |
 
 #### Example: Load
 

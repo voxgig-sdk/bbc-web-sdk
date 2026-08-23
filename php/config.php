@@ -33,6 +33,9 @@ class BbcWebConfig
         return [
             "main" => [
                 "name" => "BbcWeb",
+                "slug" => "bbc-web",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,10 +58,12 @@ class BbcWebConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'The content data object containing news articles, videos, or other BBC content',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'metadata',
+              'short' => 'Metadata about the content',
               'type' => '`$OBJECT`',
             ],
           ],

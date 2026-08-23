@@ -92,8 +92,8 @@ $content = $client->Content();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `metadata` | `array` | No |  |
+| `data` | `array` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `array` | No | Metadata about the content |
 
 ### Operations
 

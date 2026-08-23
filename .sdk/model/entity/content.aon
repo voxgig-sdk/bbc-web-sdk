@@ -8,11 +8,13 @@ main: kit: entity: content: {
     {
       name: "data"
       req: false
+      short: "The content data object containing news articles, videos, or other BBC content"
       type: "`$OBJECT`"
     }
     {
       name: "metadata"
       req: false
+      short: "Metadata about the content"
       type: "`$OBJECT`"
     }
   ]

@@ -225,8 +225,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `metadata` |  |
+| `data` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | Metadata about the content |
 
 Operations: Load.
 
@@ -251,8 +251,8 @@ Create an instance: `local content = client:Content(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
-| `metadata` | `table` |  |
+| `data` | `table` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `table` | Metadata about the content |
 
 #### Example: Load
 

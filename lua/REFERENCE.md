@@ -90,8 +90,8 @@ local content = client:Content(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
-| `metadata` | `table` | No |  |
+| `data` | `table` | No | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `table` | No | Metadata about the content |
 
 ### Operations
 

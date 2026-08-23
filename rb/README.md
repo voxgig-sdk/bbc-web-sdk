@@ -235,8 +235,8 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `metadata` |  |
+| `data` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | Metadata about the content |
 
 Operations: Load.
 
@@ -261,8 +261,8 @@ Create an instance: `content = client.Content`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
-| `metadata` | `Hash` |  |
+| `data` | `Hash` | The content data object containing news articles, videos, or other BBC content |
+| `metadata` | `Hash` | Metadata about the content |
 
 #### Example: Load
 

@@ -28,6 +28,7 @@ module BbcWebConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {

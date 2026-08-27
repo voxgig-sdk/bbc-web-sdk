@@ -36,7 +36,7 @@ local client = sdk.new()
 ### 3. Load a content
 
 ```lua
-local content, err = client:Content():load()
+local content, err = client:Content():load({ path = "example_path" })
 if err then error(err) end
 print(content)
 ```
@@ -48,7 +48,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local content, err = client:Content():load()
+local content, err = client:Content():load({ path = "example" })
 if err then error(err) end
 ```
 
@@ -106,7 +106,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Content():load()
+local result, err = client:Content():load({ path = "example" })
 -- result is the returned data; err is set on failure
 ```
 
@@ -257,8 +257,31 @@ Create an instance: `local content = client:Content(nil)`
 #### Example: Load
 
 ```lua
-local content, err = client:Content():load()
+local content, err = client:Content():load({ path = "path" })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -338,7 +361,7 @@ stores the returned data and match criteria internally.
 
 ```lua
 local content = client:Content()
-content:load()
+content:load({ path = "example" })
 
 -- content:data_get() now returns the content data from the last load
 -- content:match_get() returns the last match criteria

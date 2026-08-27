@@ -20,8 +20,7 @@ type Content struct {
 
 // ContentLoadMatch is the typed request payload for Content.LoadTyped.
 type ContentLoadMatch struct {
-	Data *map[string]any `json:"data,omitempty"`
-	Metadata *map[string]any `json:"metadata,omitempty"`
+	Path string `json:"path"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

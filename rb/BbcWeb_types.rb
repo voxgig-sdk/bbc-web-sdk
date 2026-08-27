@@ -23,14 +23,10 @@ Content = Struct.new(
 
 # Request payload for Content#load.
 #
-# @!attribute [rw] data
-#   @return [Hash, nil]
-#
-# @!attribute [rw] metadata
-#   @return [Hash, nil]
+# @!attribute [rw] path
+#   @return [String]
 ContentLoadMatch = Struct.new(
-  :data,
-  :metadata,
+  :path,
   keyword_init: true
 )
 

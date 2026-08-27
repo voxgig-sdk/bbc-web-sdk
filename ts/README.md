@@ -39,7 +39,7 @@ const client = new BbcWebSDK()
 
 ```ts
 try {
-  const content = await client.Content().load()
+  const content = await client.Content().load({ path: 'example_path' })
   console.log(content)
 } catch (err) {
   console.error('load failed:', err)
@@ -53,7 +53,7 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const content = await client.Content().load()
+  const content = await client.Content().load({ path: "example" })
   console.log(content)
 } catch (err) {
   console.error('load failed:', err)
@@ -120,7 +120,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = BbcWebSDK.test()
 
-const content = await client.Content().load()
+const content = await client.Content().load({ path: 'example_path' })
 // content is the entity, populated with mock response data
 // — call content.data() for the record itself
 console.log(content)
@@ -141,7 +141,7 @@ Entity instances remember their last match and data:
 const entity = client.Content()
 
 // First call runs the operation and stores its result
-await entity.load()
+await entity.load({ path: 'example_path' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -317,8 +317,31 @@ Create an instance: `const content = client.Content()`
 #### Example: Load
 
 ```ts
-const content = await client.Content().load()
+const content = await client.Content().load({ path: 'path' })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -391,7 +414,7 @@ calls on the same instance can rely on this state.
 
 ```ts
 const content = client.Content()
-await content.load()
+await content.load({ path: "example" })
 
 // content.data() now returns the content data from the last `load`
 // content.match() returns the last match criteria

@@ -11,7 +11,6 @@ export interface Content {
 }
 
 export interface ContentLoadMatch {
-  data?: Record<string, any>
-  metadata?: Record<string, any>
+  path: string
 }
 

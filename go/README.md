@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single content — the value is the loaded record.
-    content, err := client.Content(nil).Load(nil, nil)
+    content, err := client.Content(nil).Load(map[string]any{"path": "example_path"}, nil)
     if err != nil {
         panic(err)
     }
@@ -66,7 +66,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-content, err := client.Content(nil).Load(nil, nil)
+content, err := client.Content(nil).Load(map[string]any{"path": "example"}, nil)
 if err != nil {
     // handle err
     return
@@ -136,7 +136,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 content, err := client.Content(nil).Load(
-    nil, nil,
+    map[string]any{"path": "example"}, nil,
 )
 if err != nil {
     panic(err)
@@ -290,12 +290,35 @@ Create an instance: `content := client.Content(nil)`
 #### Example: Load
 
 ```go
-content, err := client.Content(nil).Load(nil, nil)
+content, err := client.Content(nil).Load(map[string]any{"path": "path"}, nil)
 if err != nil {
     panic(err)
 }
 fmt.Println(content) // the loaded record
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -372,7 +395,7 @@ stores the returned data and match criteria internally.
 
 ```go
 content := client.Content(nil)
-content.Load(nil, nil)
+content.Load(map[string]any{"path": "example"}, nil)
 
 // content.Data() now returns the content data from the last load
 // content.Match() returns the last match criteria

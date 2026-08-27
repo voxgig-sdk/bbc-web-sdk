@@ -11,8 +11,7 @@
 ---@field metadata? table
 
 ---@class ContentLoadMatch
----@field data? table
----@field metadata? table
+---@field path string
 
 local M = {}
 

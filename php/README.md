@@ -36,7 +36,7 @@ $client = new BbcWebSDK();
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the Content record (throws on error).
-    $content = $client->Content()->load();
+    $content = $client->Content()->load(["path" => "example_path"]);
     print_r($content);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -51,7 +51,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $content = $client->Content()->load();
+    $content = $client->Content()->load(["path" => "example"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,7 +125,7 @@ $client = BbcWebSDK::test();
 
 // Entity ops return the ENTITY (throws on error);
 // call data_get() for the mock record.
-$content = $client->Content()->load();
+$content = $client->Content()->load(["path" => "example"]);
 print_r($content);
 ```
 
@@ -278,8 +278,31 @@ Create an instance: `$content = $client->Content();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the Content record (throws on error).
-$content = $client->Content()->load();
+$content = $client->Content()->load(["path" => "path"]);
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -359,7 +382,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $content = $client->Content();
-$content->load();
+$content->load(["path" => "example"]);
 
 // $content->data_get() now returns the content data from the last load
 // $content->match_get() returns the last match criteria

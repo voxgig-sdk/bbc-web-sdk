@@ -22,7 +22,6 @@ class Content
 /** Request payload for Content#load. */
 class ContentLoadMatch
 {
-    public ?array $data = null;
-    public ?array $metadata = null;
+    public string $path;
 }
 

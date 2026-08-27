@@ -35,7 +35,7 @@ client = BbcWebSDK.new
 ```ruby
 begin
   # load returns the ENTITY — call data_get for the Content record (raises on error).
-  content = client.Content.load()
+  content = client.Content.load({ "path" => "example_path" })
   puts content
 rescue => err
   warn "load failed: #{err}"
@@ -49,7 +49,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  content = client.Content.load()
+  content = client.Content.load({ "path" => "example" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -119,7 +119,7 @@ client = BbcWebSDK.test
 
 # Entity ops return the ENTITY (raises on error);
 # call data_get for the mock record.
-content = client.Content.load()
+content = client.Content.load({ "path" => "example" })
 puts content
 ```
 
@@ -268,8 +268,31 @@ Create an instance: `content = client.Content`
 
 ```ruby
 # load returns the ENTITY — call data_get for the Content record (raises on error).
-content = client.Content.load()
+content = client.Content.load({ "path" => "path" })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -349,7 +372,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 content = client.Content
-content.load()
+content.load({ "path" => "example" })
 
 # content.data_get now returns the content data from the last load
 # content.match_get returns the last match criteria

@@ -21,6 +21,5 @@ class Content(TypedDict, total=False):
     metadata: dict
 
 
-class ContentLoadMatch(TypedDict, total=False):
-    data: dict
-    metadata: dict
+class ContentLoadMatch(TypedDict):
+    path: str

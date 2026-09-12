@@ -64,10 +64,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/xd/page/content",
-                ["parts"] = {
-                  "xd",
-                  "page",
-                  "content",
+                ["segments"] = {
+                  {
+                    ["lit"] = "xd",
+                  },
+                  {
+                    ["lit"] = "page",
+                  },
+                  {
+                    ["lit"] = "content",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -77,6 +83,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "xd",
+                  "page",
+                  "content",
                 },
               },
             },

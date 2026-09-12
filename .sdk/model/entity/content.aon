@@ -39,10 +39,16 @@ main: kit: entity: content: {
           }
           method: "GET"
           orig: "/xd/page/content"
-          parts: [
-            "xd"
-            "page"
-            "content"
+          segments: [
+            {
+              lit: "xd"
+            }
+            {
+              lit: "page"
+            }
+            {
+              lit: "content"
+            }
           ]
           select: {
             exist: [

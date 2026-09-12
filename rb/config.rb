@@ -76,10 +76,16 @@ module BbcWebConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/xd/page/content",
-                  "parts" => [
-                    "xd",
-                    "page",
-                    "content",
+                  "segments" => [
+                    {
+                      "lit" => "xd",
+                    },
+                    {
+                      "lit" => "page",
+                    },
+                    {
+                      "lit" => "content",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -90,6 +96,11 @@ module BbcWebConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "xd",
+                    "page",
+                    "content",
+                  ],
                 },
               ],
             },

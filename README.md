@@ -105,7 +105,7 @@ local result, err = client:Content():load({ path = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
+| TypeScript | `@voxgig-sdk/bbc-web-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
 | Python | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
 | PHP | `voxgig-sdk/bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/bbc-web-sdk/go` | `go get github.com/voxgig-sdk/bbc-web-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Content():load({ path = "example" })
 ### TypeScript
 
 ```ts
-import { BbcWebSDK } from '@voxgig-sdk/bbc-web'
+import { BbcWebSDK } from '@voxgig-sdk/bbc-web-sdk'
 
 const client = new BbcWebSDK()
 

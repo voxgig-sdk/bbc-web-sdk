@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BbcWebSDK } from '@voxgig-sdk/bbc-web'
+import { BbcWebSDK } from '@voxgig-sdk/bbc-web-sdk'
 
 const client = new BbcWebSDK()
 ```
@@ -403,7 +403,7 @@ bbc-web/
 Import the SDK from the package root:
 
 ```ts
-import { BbcWebSDK } from '@voxgig-sdk/bbc-web'
+import { BbcWebSDK } from '@voxgig-sdk/bbc-web-sdk'
 ```
 
 ### Entity state

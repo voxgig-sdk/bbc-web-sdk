@@ -1,12 +1,18 @@
 # BbcWeb SDK feature factory
 
 from bbcweb_sdk.feature.base_feature import BbcWebBaseFeature
+from bbcweb_sdk.feature.ratelimit_feature import BbcWebRatelimitFeature
+from bbcweb_sdk.feature.retry_feature import BbcWebRetryFeature
 from bbcweb_sdk.feature.test_feature import BbcWebTestFeature
+from bbcweb_sdk.feature.timeout_feature import BbcWebTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: BbcWebBaseFeature(),
+    "ratelimit": lambda: BbcWebRatelimitFeature(),
+    "retry": lambda: BbcWebRetryFeature(),
     "test": lambda: BbcWebTestFeature(),
+    "timeout": lambda: BbcWebTimeoutFeature(),
 }
 
 

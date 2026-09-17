@@ -105,12 +105,12 @@ local result, err = client:Content():load({ path = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/bbc-web-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
-| Python | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
-| PHP | `voxgig-sdk/bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
+| TypeScript | `@voxgig-sdk/bbc-web-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/tags) |
+| Python | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/tags) |
+| PHP | `voxgig-sdk/bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/bbc-web-sdk/go` | `go get github.com/voxgig-sdk/bbc-web-sdk/go@latest` |
-| Ruby | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
-| Lua | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/releases) |
+| Ruby | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/tags) |
+| Lua | `voxgig-sdk-bbc-web` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bbc-web-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/bbc-web-sdk/go-cli` | `go install github.com/voxgig-sdk/bbc-web-sdk/go-cli/cmd/bbc-web@latest` |
 | Go MCP server | `github.com/voxgig-sdk/bbc-web-sdk/go-mcp` | `go get github.com/voxgig-sdk/bbc-web-sdk/go-mcp@latest` |
 

@@ -24,28 +24,96 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "content": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "The content data object containing news articles, videos, or other BBC content",
-              "type": "`$OBJECT`"
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "The content data object containing news articles, videos, or other BBC content",
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "metadata",
-              "req": false,
-              "short": "Metadata about the content",
-              "type": "`$OBJECT`"
+            "metadata": {
+              "a": true,
+              "h": "Metadata",
+              "n": "metadata",
+              "r": false,
+              "sh": "Metadata about the content",
+              "t": "`$OBJECT`"
             }
-          ],
+          },
           "name": "content",
           "op": {
             "load": {
@@ -53,30 +121,35 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /xd/page/content",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "/news/videos/ckgerdnvm2xo",
-                        "kind": "query",
-                        "name": "path",
-                        "orig": "path",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "/news/videos/ckgerdnvm2xo",
+                        "k": "query",
+                        "n": "path",
+                        "or": "path",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /xd/page/content",
-                    "json": "{\"operationId\":\"getContent\",\"parameters\":[{\"description\":\"The path to the BBC content resource (e.g., /news/videos/ckgerdnvm2xo)\",\"in\":\"query\",\"name\":\"path\",\"required\":true,\"schema\":{\"example\":\"/news/videos/ckgerdnvm2xo\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"description\":\"The content data object containing news articles, videos, or other BBC content\",\"type\":\"object\"},\"metadata\":{\"description\":\"Metadata about the content\",\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved BBC content\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Invalid path parameter\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Invalid path parameter\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Content not found\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Content not found for the specified path\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Internal server error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/xd/page/content",
+                  "q": {
+                    "exist": [
+                      "path"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/xd/page/content",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "xd"
                     },
@@ -87,12 +160,7 @@
                       "lit": "content"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "path"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -521,17 +589,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "content_ref01",
                 "srcdatavar": "content_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

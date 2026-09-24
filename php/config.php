@@ -113,13 +113,15 @@ class BbcWebConfig
           'fields' => [
             [
               'name' => 'data',
-              'short' => 'The content data object containing news articles, videos, or other BBC content',
+              'title' => 'Data',
               'type' => '`$OBJECT`',
+              'short' => 'The content data object containing news articles, videos, or other BBC content',
             ],
             [
               'name' => 'metadata',
-              'short' => 'Metadata about the content',
+              'title' => 'Metadata',
               'type' => '`$OBJECT`',
+              'short' => 'Metadata about the content',
             ],
           ],
           'name' => 'content',
@@ -129,18 +131,6 @@ class BbcWebConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'example' => '/news/videos/ckgerdnvm2xo',
-                        'kind' => 'query',
-                        'name' => 'path',
-                        'orig' => 'path',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/xd/page/content',
@@ -155,19 +145,32 @@ class BbcWebConfig
                       'lit' => 'content',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'path',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'xd',
                     'page',
                     'content',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'path',
+                        'orig' => 'path',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'reqd' => true,
+                        'example' => '/news/videos/ckgerdnvm2xo',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'path',
+                    ],
                   ],
                 ],
               ],

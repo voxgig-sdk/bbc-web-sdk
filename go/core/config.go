@@ -91,13 +91,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "The content data object containing news articles, videos, or other BBC content",
+						"title": "Data",
 						"type": "`$OBJECT`",
+						"short": "The content data object containing news articles, videos, or other BBC content",
 					},
 					map[string]any{
 						"name": "metadata",
-						"short": "Metadata about the content",
+						"title": "Metadata",
 						"type": "`$OBJECT`",
+						"short": "Metadata about the content",
 					},
 				},
 				"name": "content",
@@ -107,18 +109,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "/news/videos/ckgerdnvm2xo",
-											"kind": "query",
-											"name": "path",
-											"orig": "path",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/xd/page/content",
@@ -133,19 +123,32 @@ func MakeConfig() map[string]any {
 										"lit": "content",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"path",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"xd",
 									"page",
 									"content",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "path",
+											"orig": "path",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+											"example": "/news/videos/ckgerdnvm2xo",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"path",
+									},
 								},
 							},
 						},

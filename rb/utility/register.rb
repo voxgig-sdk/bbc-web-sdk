@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 BbcWebUtility.registrar = ->(u) {
   u.clean = BbcWebUtilities::Clean
+  u.clean_add = BbcWebUtilities::CleanAdd
+  u.clean_explain = BbcWebUtilities::CleanExplain
   u.done = BbcWebUtilities::Done
   u.make_error = BbcWebUtilities::MakeError
   u.feature_add = BbcWebUtilities::FeatureAdd

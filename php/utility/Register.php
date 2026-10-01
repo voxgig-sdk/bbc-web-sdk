@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 BbcWebUtility::setRegistrar(function (BbcWebUtility $u): void {
     $u->clean = [BbcWebClean::class, 'call'];
+    $u->clean_add = [BbcWebClean::class, 'add'];
+    $u->clean_explain = [BbcWebDone::class, 'clean_explain'];
     $u->done = [BbcWebDone::class, 'call'];
     $u->make_error = [BbcWebMakeError::class, 'call'];
     $u->feature_add = [BbcWebFeatureAdd::class, 'call'];

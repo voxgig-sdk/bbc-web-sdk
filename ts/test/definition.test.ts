@@ -19,8 +19,18 @@ const PLAN: any[] = [
       "path": "/news/videos/ckgerdnvm2xo"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "path"
+    ],
+    "queryArgs": [
+      {
+        "name": "path",
+        "wire": "path"
+      }
     ],
     "auth": null,
     "status": 200,

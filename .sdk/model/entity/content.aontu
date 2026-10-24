@@ -51,6 +51,10 @@ main: kit: entity: content: {
               "path"
             ]
           }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "xd"

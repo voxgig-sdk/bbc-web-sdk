@@ -3,11 +3,16 @@ declare(strict_types=1);
 
 // BbcWeb SDK utility: prepare_body
 
+require_once __DIR__ . '/Media.php';
+
 class BbcWebPrepareBody
 {
     public static function call(BbcWebContext $ctx): mixed
     {
         if ($ctx->op->input === 'data') {
+            if (BbcWebMedia::isRawRequest($ctx->point)) {
+                return BbcWebMedia::rawBody($ctx->reqdata);
+            }
             $body = ($ctx->utility->transform_request)($ctx);
             // PHP cannot tell an empty map from an empty list, and this
             // vendored struct answers [] where the canonical transform
